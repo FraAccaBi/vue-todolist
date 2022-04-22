@@ -23,6 +23,8 @@ Bonus:
 const app = new Vue({
     el: '#app',
     data:{
+        index: 0,
+        newTask: '',
         tasks: [
             {
                 task:'Laundry',
@@ -30,7 +32,7 @@ const app = new Vue({
             },
             {
                 task:'Homework',
-                boolean: true
+                boolean: false
             },
             {
                 task:'Shopping',
@@ -39,6 +41,20 @@ const app = new Vue({
         ]
     },
     methods: {
-
+        addDone(index){
+            console.log('add class');
+            console.log(this);
+            this.tasks.splice(index, 1)
+        },
+        addTask(){
+            console.log(this.newTask);
+            this.tasks.unshift({task: `${this.newTask}`, boolean: true});
+            this.newTask = ''
+        },
+        removeTask(index){
+            console.log('add class');
+            console.log(this);
+            this.tasks.splice(index, 1)
+        }
     }
 });
