@@ -37,7 +37,9 @@
     border: 1px solid lightgray;
     background-color: lightgray;
     border-radius: 0.5rem;
-    padding-right: 1rem;
+}
+.tasks{
+    padding-left: 0.5rem;
 }
 
 

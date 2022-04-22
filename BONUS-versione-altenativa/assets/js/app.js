@@ -14,6 +14,12 @@ const app = new Vue({
     data:{
         index: 0,
         newTask: '',
+        completed: [
+            {
+                task: 'laundry',
+                boolean: true
+            }
+        ],
         tasks: [
             {
                 task:'Laundry',
@@ -27,7 +33,8 @@ const app = new Vue({
                 task:'Shopping',
                 boolean: true
             }
-        ]
+        ],
+        
     },
     methods: {
         addTask(){
@@ -37,6 +44,8 @@ const app = new Vue({
             }            
         },
         removeTask(index){
+            //this.completed.push({task: `${this.newTask}`, boolean: true});
+            //console.log(completed);
             this.tasks.splice(index, 1)
         },
         addDone(index){

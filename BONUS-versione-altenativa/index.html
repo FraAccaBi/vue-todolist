@@ -25,24 +25,26 @@
                 <button @click="addTask" class="add btn border-dark">Aggiungi</button>
             </div>
             <div class="liste d-flex row display-grid gap-2 ">
-              <div class="lista todo my-3 py-3 col-6">
+              <div class="lista todo my-3 py-3 col-5">
+                <h5 class="fw-bold text-start">Todo list</h5>
                 <ul class="tasks" v-if="tasks.length > 0">
-                    <li class="list-unstyled d-flex row px-2" v-for="(task, index) in tasks" :class="tasks[index].boolean === false ? 'done' : '' ">
-                        <div class="col-8 text-start dispaly-inline" @click="addDone(index)">{{tasks[index].task}}</div>
+                    <li class="list-unstyled d-flex row" v-for="(task, index) in tasks" :class="tasks[index].boolean === false ? 'done' : '' ">
+                        <div class="col-8 text-start display-inline" @click="addDone(index)">{{tasks[index].task}}</div>
                         <div class="bottoni d-inline col-4 text-end">
                             <i class="fas fa-check px-2" @click="addDone(index)"></i>
-                            <i class="fas fa-times-circle" @click="removeTask(index)"></i>
+                            <i class="fa-solid fa-trash" @click="removeTask(index)"></i>
                         </div>
                         <hr>
                     </li>
                 </ul>
                 <div v-else>Nothing to do!</div>
               </div>
-              <div class="lista completed my-3 py-3 col-2">
-                ciao
+              <div class="lista completed my-3 py-3 col-3">
+                <h5 class="fw-bold text-start">Completed</h5>
+                <p>{{completed[0].task}}</p>
               </div>
               <div class="lista trashed my-3 py-3 col-3">
-                ciao
+                <h5 class="fw-bold text-start">Trashed</h5> <div class="empty display-inline"></div>
               </div>
             </div>
             
