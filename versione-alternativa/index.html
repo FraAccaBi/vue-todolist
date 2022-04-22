@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' integrity='sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==' crossorigin='anonymous' referrerpolicy='no-referrer' />
+
+    <title>ToBoolist Reloaded</title>
+  </head>
+  <body>
+      <div id="app">
+        <div class="container text-center">
+            <header class="d-flex align-items-center justify-content-center py-3">
+                <img class="logo" src="./img/logo_boolean.png" alt="">
+                <h1 class="d-inline">ToBoolist Reloaded</h1>
+            </header>
+            
+            <div class="add_task d-flex justify-content-evenly">
+                <input type="text" v-model="newTask" @keyup.enter="addTask" class="text-start todo btn border-dark pe-5 ps-3" placeholder="Nuovo Todo">
+                <button @click="addTask" class="add btn border-dark">Aggiungi</button>
+            </div>
+            <div class="lista my-4 py-3">
+                <ul class="tasks" v-if="tasks.length > 0">
+                    <li class="list-unstyled d-flex row px-2" v-for="(task, index) in tasks" :class="tasks[index].boolean === false ? 'done' : '' ">
+                        <div class="col-8 text-start dispaly-inline" @click="addDone(index)">{{tasks[index].task}}</div>
+                        <div class="bottoni d-inline col-4 text-end">
+                            <i class="fas fa-check px-2" @click="addDone(index)"></i>
+                            <i class="fas fa-times-circle" @click="removeTask(index)"></i>
+                        </div>
+                        <hr>
+                    </li>
+                </ul>
+                <div v-else>Nothing to do!</div>
+            </div>
+           
+        </div>
+        
+      </div>
+    
+
+    <script src='https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js'></script>
+    <script src="./assets/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  </body>
+</html>

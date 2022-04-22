@@ -1,0 +1,47 @@
+/* #region UTILITIES */
+.done{
+    text-decoration: line-through;
+}
+/* #endregion UTILITIES */
+
+/* #region COMMON */
+
+.container{
+    max-width: 500px;
+}
+/* #endregion COMMON */
+
+
+/* #region HEADER */
+.logo{
+    height: 80px;
+    margin-left: -2rem;
+}
+/* #endregion HEADER */
+
+/* #region MAIN */
+
+.todo, .add{
+    border-radius: 0.5rem;
+}
+.add{
+    background-color: lightgray;
+    margin-left: -2rem;
+}
+
+.lista{
+    border: 1px solid lightgray;
+    background-color: lightgray;
+    border-radius: 0.5rem;
+    padding-right: 1rem;
+}
+
+
+/* #endregion MAIN */
+
+
+
+
+
+
+
