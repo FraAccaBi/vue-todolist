@@ -14,12 +14,8 @@ const app = new Vue({
     data:{
         index: 0,
         newTask: '',
-        completed: [
-            {
-                task: 'laundry',
-                boolean: true
-            }
-        ],
+        completed: [],
+        trashed: [],
         tasks: [
             {
                 task:'Laundry',
@@ -45,11 +41,14 @@ const app = new Vue({
         },
         removeTask(index){
             console.log(this.tasks[index].task);
-            let complete = this.tasks[index].task
-            this.completed.unshift({task: `${complete}`, boolean: true});
+            let trash = this.tasks[index].task
+            this.trashed.push({task: `${trash}`, boolean: true});
             this.tasks.splice(index, 1)
         },
         addDone(index){
+            console.log(this.tasks[index].task);
+            let complete = this.tasks[index].task
+            this.completed.push({task: `${complete}`, boolean: true});
             this.tasks[index].boolean = false
         }
     }
