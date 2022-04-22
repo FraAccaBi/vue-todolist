@@ -15,6 +15,7 @@
 /* #region HEADER */
 .logo{
     height: 80px;
+    margin-left: -2rem;
 }
 /* #endregion HEADER */
 
@@ -25,6 +26,14 @@
 }
 .add{
     background-color: lightgray;
+    margin-left: -2rem;
+}
+
+.lista{
+    border: 1px solid lightgray;
+    background-color: lightgray;
+    border-radius: 0.5rem;
+    padding-right: 1rem;
 }
 
 /* #endregion MAIN */

@@ -20,18 +20,19 @@
                 <h1 class="d-inline">ToBoolist Reloaded</h1>
             </header>
             
-            <div class="add_task">
-                <input type="text" v-model="newTask" @keyup.enter="addTask" class="todo btn border" placeholder="Nuovo Todo">
-                <button @click="addTask" class="add btn border">Aggiungi</button>
+            <div class="add_task d-flex justify-content-evenly">
+                <input type="text" v-model="newTask" @keyup.enter="addTask" class="text-start todo btn border-dark pe-5 ps-3" placeholder="Nuovo Todo">
+                <button @click="addTask" class="add btn border-dark">Aggiungi</button>
             </div>
-            <div class="lista">
+            <div class="lista my-4 py-3">
                 <ul class="tasks" v-if="tasks.length > 0">
-                    <li class="list-unstyled" v-for="(task, index) in tasks" :class="tasks[index].boolean === false ? 'done' : '' ">
-                        {{tasks[index].task}}
-                        <div class="bottoni d-inline">
+                    <li class="list-unstyled d-flex row px-2" v-for="(task, index) in tasks" :class="tasks[index].boolean === false ? 'done' : '' ">
+                        <div class="col-8 text-start dispaly-inline">{{tasks[index].task}}</div>
+                        <div class="bottoni d-inline col-4 text-end">
                             <i class="fas fa-check" @click="addDone(index)"></i>
                             <i class="fas fa-times-circle" @click="removeTask(index)"></i>
                         </div>
+                        <hr>
                     </li>
                 </ul>
                 <div v-else>Nothing to do!</div>
