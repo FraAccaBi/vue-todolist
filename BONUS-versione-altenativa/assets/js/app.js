@@ -14,7 +14,12 @@ const app = new Vue({
     data:{
         index: 0,
         newTask: '',
-        completed: [],
+        completed: [
+            {
+                task:'Homework',
+                boolean: false
+            }
+        ],
         trashed: [],
         tasks: [
             {

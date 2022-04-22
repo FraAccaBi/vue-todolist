@@ -41,11 +41,12 @@
               </div>
               <div class="lista completed my-3 py-3 col-3">
                 <h5 class="fw-bold text-start">Completed</h5>
-                <p v-for="(task, index) in completed">{{completed[index].task}}</p>
+                <p v-for="(task, index) in completed">
+                  {{completed[index].task}} <i class="fa-solid fa-arrow-rotate-left"></i>
+                </p>
               </div>
               <div class="lista trashed my-3 py-3 col-3">
                 <h5 class="fw-bold text-start">Trashed <span class="empty" @click="removeAll">(Empty bin)</span></h5> 
-                
                 <p v-for="(task, index) in trashed">{{trashed[index].task}}</p>
                 
               </div>
