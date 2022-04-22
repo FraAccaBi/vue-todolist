@@ -7,7 +7,7 @@
 /* #region COMMON */
 
 .container{
-    max-width: 500px;
+    width: 700px;
 }
 /* #endregion COMMON */
 
@@ -29,6 +29,10 @@
     margin-left: -2rem;
 }
 
+.liste{
+    padding-left: -1rem;
+    padding-right: -1rem;
+}
 .lista{
     border: 1px solid lightgray;
     background-color: lightgray;

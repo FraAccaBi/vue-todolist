@@ -10,21 +10,22 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' integrity='sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==' crossorigin='anonymous' referrerpolicy='no-referrer' />
 
-    <title>ToBoolist Reloaded</title>
+    <title>ToBoolist Reloaded - versione alternativa</title>
   </head>
   <body>
       <div id="app">
         <div class="container text-center">
             <header class="d-flex align-items-center justify-content-center py-3">
                 <img class="logo" src="./img/logo_boolean.png" alt="">
-                <h1 class="d-inline">ToBoolist Reloaded</h1>
+                <h1 class="d-inline">ToBoolist Reloaded -alt</h1>
             </header>
             
             <div class="add_task d-flex justify-content-evenly">
                 <input type="text" v-model="newTask" @keyup.enter="addTask" class="text-start todo btn border-dark pe-5 ps-3" placeholder="Nuovo Todo">
                 <button @click="addTask" class="add btn border-dark">Aggiungi</button>
             </div>
-            <div class="lista my-4 py-3">
+            <div class="liste d-flex row display-grid gap-2 ">
+              <div class="lista todo my-3 py-3 col-6">
                 <ul class="tasks" v-if="tasks.length > 0">
                     <li class="list-unstyled d-flex row px-2" v-for="(task, index) in tasks" :class="tasks[index].boolean === false ? 'done' : '' ">
                         <div class="col-8 text-start dispaly-inline" @click="addDone(index)">{{tasks[index].task}}</div>
@@ -36,7 +37,15 @@
                     </li>
                 </ul>
                 <div v-else>Nothing to do!</div>
+              </div>
+              <div class="lista completed my-3 py-3 col-2">
+                ciao
+              </div>
+              <div class="lista trashed my-3 py-3 col-3">
+                ciao
+              </div>
             </div>
+            
            
         </div>
         
