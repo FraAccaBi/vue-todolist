@@ -47,10 +47,12 @@ const app = new Vue({
         },
         removeTask(index){
             this.tasks.splice(index, 1)
+            console.log(index);
         },
         addDone(index){
-            console.log(this.tasks[index].task);
-            this.tasks.push({task: `${this.tasks.task}`, boolean: false});
+            this.tasks[index].boolean = false
+            console.log(this.tasks);
+            console.log(index);
         }
     }
 });

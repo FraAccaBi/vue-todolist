@@ -23,8 +23,8 @@
             <ul class="tasks">
                 <li class="list-unstyled" v-for="(task, index) in tasks" :class="tasks[index].boolean === false ? 'done' : '' ">
                     {{tasks[index].task}}
-                    <i class="fas fa-check" @click="addDone"></i>
-                    <i class="fas fa-times-circle" @click="removeTask"></i>
+                    <i class="fas fa-check" @click="addDone(index)"></i>
+                    <i class="fas fa-times-circle" @click="removeTask(index)"></i>
                 </li>
             </ul>
         </div>
