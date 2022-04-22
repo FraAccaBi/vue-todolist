@@ -24,7 +24,18 @@ const app = new Vue({
     el: '#app',
     data:{
         tasks: [
-            ['Laundry', true], ['Homework', true], ['Shopping', true]
+            {
+                task:'Laundry',
+                boolean: true
+            },
+            {
+                task:'Homework',
+                boolean: true
+            },
+            {
+                task:'Shopping',
+                boolean: true
+            }
         ]
     },
     methods: {
