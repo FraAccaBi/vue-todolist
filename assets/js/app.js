@@ -42,17 +42,16 @@ const app = new Vue({
     },
     methods: {
         addTask(){
-            this.tasks.unshift({task: `${this.newTask}`, boolean: true});
+            if (this.newTask !== '') {
+                this.tasks.unshift({task: `${this.newTask}`, boolean: true});
             this.newTask = ''
+            }            
         },
         removeTask(index){
             this.tasks.splice(index, 1)
-            console.log(index);
         },
         addDone(index){
             this.tasks[index].boolean = false
-            console.log(this.tasks);
-            console.log(index);
         }
     }
 });

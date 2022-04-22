@@ -27,9 +27,9 @@
             <div class="lista my-4 py-3">
                 <ul class="tasks" v-if="tasks.length > 0">
                     <li class="list-unstyled d-flex row px-2" v-for="(task, index) in tasks" :class="tasks[index].boolean === false ? 'done' : '' ">
-                        <div class="col-8 text-start dispaly-inline">{{tasks[index].task}}</div>
+                        <div class="col-8 text-start dispaly-inline" @click="addDone(index)">{{tasks[index].task}}</div>
                         <div class="bottoni d-inline col-4 text-end">
-                            <i class="fas fa-check" @click="addDone(index)"></i>
+                            <i class="fas fa-check px-2" @click="addDone(index)"></i>
                             <i class="fas fa-times-circle" @click="removeTask(index)"></i>
                         </div>
                         <hr>
