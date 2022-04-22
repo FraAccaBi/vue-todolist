@@ -1,9 +1,37 @@
-body{
-    background-color: cadetblue;
-}
-
+/* #region UTILITIES */
 .done{
     text-decoration: line-through;
 }
+/* #endregion UTILITIES */
+
+/* #region COMMON */
+
+.container{
+    max-width: 500px;
+}
+/* #endregion COMMON */
+
+
+/* #region HEADER */
+.logo{
+    height: 80px;
+}
+/* #endregion HEADER */
+
+/* #region MAIN */
+
+.todo, .add{
+    border-radius: 0.5rem;
+}
+.add{
+    background-color: lightgray;
+}
+
+/* #endregion MAIN */
+
+
+
+
+
 
 

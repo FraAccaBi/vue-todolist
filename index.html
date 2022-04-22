@@ -15,18 +15,28 @@
   <body>
       <div id="app">
         <div class="container text-center">
-            <h1>ToBoolist Reloaded</h1>
+            <header class="d-flex align-items-center justify-content-center py-3">
+                <img class="logo" src="./img/logo_boolean.png" alt="">
+                <h1 class="d-inline">ToBoolist Reloaded</h1>
+            </header>
+            
             <div class="add_task">
-                <input type="text" v-model="newTask" @keyup.enter="addTask">
-                <button @click="addTask">Add</button>
+                <input type="text" v-model="newTask" @keyup.enter="addTask" class="todo btn border" placeholder="Nuovo Todo">
+                <button @click="addTask" class="add btn border">Aggiungi</button>
             </div>
-            <ul class="tasks">
-                <li class="list-unstyled" v-for="(task, index) in tasks" :class="tasks[index].boolean === false ? 'done' : '' ">
-                    {{tasks[index].task}}
-                    <i class="fas fa-check" @click="addDone(index)"></i>
-                    <i class="fas fa-times-circle" @click="removeTask(index)"></i>
-                </li>
-            </ul>
+            <div class="lista">
+                <ul class="tasks" v-if="tasks.length > 0">
+                    <li class="list-unstyled" v-for="(task, index) in tasks" :class="tasks[index].boolean === false ? 'done' : '' ">
+                        {{tasks[index].task}}
+                        <div class="bottoni d-inline">
+                            <i class="fas fa-check" @click="addDone(index)"></i>
+                            <i class="fas fa-times-circle" @click="removeTask(index)"></i>
+                        </div>
+                    </li>
+                </ul>
+                <div v-else>Nothing to do!</div>
+            </div>
+           
         </div>
         
       </div>
