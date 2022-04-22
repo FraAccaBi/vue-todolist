@@ -41,20 +41,16 @@ const app = new Vue({
         ]
     },
     methods: {
-        addDone(index){
-            console.log('add class');
-            console.log(this);
-            this.tasks.splice(index, 1)
-        },
         addTask(){
-            console.log(this.newTask);
             this.tasks.unshift({task: `${this.newTask}`, boolean: true});
             this.newTask = ''
         },
         removeTask(index){
-            console.log('add class');
-            console.log(this);
             this.tasks.splice(index, 1)
+        },
+        addDone(index){
+            console.log(this.tasks[index].task);
+            this.tasks.push({task: `${this.tasks.task}`, boolean: false});
         }
     }
 });
