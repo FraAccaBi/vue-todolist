@@ -44,8 +44,9 @@ const app = new Vue({
             }            
         },
         removeTask(index){
-            //this.completed.push({task: `${this.newTask}`, boolean: true});
-            //console.log(completed);
+            console.log(this.tasks[index].task);
+            let complete = this.tasks[index].task
+            this.completed.unshift({task: `${complete}`, boolean: true});
             this.tasks.splice(index, 1)
         },
         addDone(index){

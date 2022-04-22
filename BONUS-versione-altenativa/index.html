@@ -41,7 +41,7 @@
               </div>
               <div class="lista completed my-3 py-3 col-3">
                 <h5 class="fw-bold text-start">Completed</h5>
-                <p>{{completed[0].task}}</p>
+                <p v-for="(task, index) in completed">{{completed[index].task}}</p>
               </div>
               <div class="lista trashed my-3 py-3 col-3">
                 <h5 class="fw-bold text-start">Trashed</h5> <div class="empty display-inline"></div>
