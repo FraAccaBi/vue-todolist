@@ -14,18 +14,20 @@
   </head>
   <body>
       <div id="app">
-        <h1>ToBoolist Reloaded</h1>
-        <div class="add_task">
-            <input type="text" v-model="newTask" @keyup.enter="addTask">
-            <button @click="addTask">Add</button>
+        <div class="container text-center">
+            <h1>ToBoolist Reloaded</h1>
+            <div class="add_task">
+                <input type="text" v-model="newTask" @keyup.enter="addTask">
+                <button @click="addTask">Add</button>
+            </div>
+            <ul class="tasks">
+                <li class="list-unstyled" v-for="(task, index) in tasks" :class="tasks[index].boolean === false ? 'done' : '' ">
+                    {{tasks[index].task}}
+                    <i class="fas fa-check" @click="addDone"></i>
+                    <i class="fas fa-times-circle" @click="removeTask"></i>
+                </li>
+            </ul>
         </div>
-        <ul class="tasks">
-            <li v-for="(task, index) in tasks" :class="tasks[index].boolean === false ? 'done' : '' ">
-                {{tasks[index].task}}
-                <i class="fas fa-check" @click="addDone"></i>
-                <i class="fas fa-times-circle" @click="removeTask"></i>
-            </li>
-        </ul>
         
       </div>
     
