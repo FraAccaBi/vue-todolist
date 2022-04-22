@@ -41,7 +41,11 @@
 .tasks{
     padding-left: 0.5rem;
 }
-
+.empty{
+    color: blueviolet;
+    font-size: x-small;
+    cursor: pointer;
+}
 
 /* #endregion MAIN */
 

@@ -50,6 +50,9 @@ const app = new Vue({
             let complete = this.tasks[index].task
             this.completed.push({task: `${complete}`, boolean: true});
             this.tasks[index].boolean = false
+        },
+        removeAll(){
+            this.trashed = ''
         }
     }
 });
